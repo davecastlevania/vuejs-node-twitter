@@ -1,5 +1,3 @@
-// src/components/Auth/SignUpForm.vue
-
 <template>
   <div class="ui stackable three column centered grid container">
     <div class="column">

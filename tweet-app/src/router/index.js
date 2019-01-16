@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import SignUpForm from '@/components/Auth/SignUpForm'
-
+import LoginForm from '@/components/Auth/LoginForm'
+import UserProfileSettings from '@/components/User/Settings/UserProfileSettings'
 Vue.use(Router)
 
 export default new Router({
@@ -16,6 +17,16 @@ export default new Router({
       path: '/signup',
       name: 'SignUpForm',
       component: SignUpForm
+    },
+    {
+      path: '/login',
+      name: 'LoginForm',
+      component: LoginForm
+    },
+    {
+      path: '/settings/profile',
+      name: 'UserProfileSettings',
+      component: UserProfileSettings
     }
   ]
 })

@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import SignUpForm from '@/components/Auth/SignUpForm'
 import LoginForm from '@/components/Auth/LoginForm'
 import UserProfileSettings from '@/components/User/Settings/UserProfileSettings'
+import UserPasswordSettings from '@/components/User/Settings/UserPasswordSettings'
+
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +29,11 @@ export default new Router({
       path: '/settings/profile',
       name: 'UserProfileSettings',
       component: UserProfileSettings
+    },
+    {
+      path: '/settings/password',
+      name: 'UserPasswordSetting',
+      component: UserPasswordSettings
     }
   ]
 })

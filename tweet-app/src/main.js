@@ -6,12 +6,13 @@ import router from './router'
 import axios from 'Axios'
 import VeeValidate from 'vee-validate'
 
+axios.defaults.baseURL = 'http://127.0.0.1:3333'
+console.log(axios.defaults)
+window.axios = axios
+
 Vue.config.productionTip = false
 // Register Vee Validate Plugin
 Vue.use(VeeValidate)
-window.axios = axios
-axios.defaults.baseUrl = 'http://127.0.0.1:3333'
-console.log(axios.defaults.baseUrl)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

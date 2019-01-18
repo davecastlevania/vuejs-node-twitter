@@ -155,23 +155,27 @@ class UserController {
       }
     }
 
+
     async usersToFollow ({ params, auth, response }) {
         // get currently authenticated user
         const user = auth.current.user
-
-        // get the IDs of users currently authernticated user is already following
+    
+        // get the IDs of users the currently authenticated user is already following
         const usersAlreadyFollowing = await user.following().ids()
-
-        // fetch users the currently authenticated user is not already following 
-        .whereNot('id', user.id)
-        .whereNotIn('id', userAlreadyFollowing)
-        .pick(3)
-
+    
+        // fetch users the currently authenticated user is not already following
+        const usersToFollow = await User.query()
+          .whereNot('id', user.id)
+          .whereNotIn('id', usersAlreadyFollowing)
+          .pick(3)
+    
         return response.json({
-            status: 'success',
-            data: userToFollow
+          status: 'success',
+          data: usersToFollow
         })
-    }
+      }
+    
+    
 
     async follow({ request, auth, response}) {
         // Get currently authenticated user
